@@ -1,0 +1,55 @@
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #0b66ff;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(12,20,40,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#eef4ff 0%, var(--bg) 100%);
+  color:var(--text);
+  padding:28px;
+}
+.wrap{
+  max-width:920px;
+  margin:0 auto;
+}
+header{text-align:center;margin-bottom:18px}
+h1{margin:0;font-size:32px}
+.subtitle{margin:6px 0 18px;color:var(--muted)}
+.menu{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:14px}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:14px 16px;
+  box-shadow:var(--shadow);
+  text-decoration:none;
+  color:var(--text);
+  display:block;
+  text-align:center;
+  font-weight:600;
+}
+.card:hover{transform:translateY(-4px);transition:all .15s ease}
+.card.outline{background:transparent;border:2px solid rgba(11,102,255,0.12)}
+.footer{text-align:center;color:var(--muted);margin-top:10px}
+.back{display:inline-block;margin-top:14px;color:var(--muted);text-decoration:none}
+.question-text{font-size:18px;margin-bottom:12px}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choice{display:block;padding:10px;background:#f8fafc;border-radius:10px;border:1px solid rgba(12,20,40,0.04)}
+.primary{margin-top:12px;background:var(--accent);color:white;border:0;padding:10px 14px;border-radius:10px;cursor:pointer}
+.feedback{padding:12px;border-radius:10px;margin-bottom:12px}
+.feedback.success{background:rgba(22,163,74,0.08);border:1px solid rgba(22,163,74,0.12);color:var(--success)}
+.feedback.error{background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.08);color:var(--danger)}
+.correct{color:var(--success);font-weight:700}
+.incorrect{color:var(--danger);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.correction{margin-bottom:10px}
+

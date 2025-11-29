@@ -1,0 +1,23 @@
+<h1>Quiz</h1>
+
+<form method="POST" action="/result">
+    <input type="hidden" name="category" value="{{ category }}">
+    <input type="hidden" name="total" value="{{ questions|length }}">
+    
+    {% for q in questions %}
+        <p><strong>{{ loop.index }}. {{ q[0] }}</strong></p>
+
+        {% for i, choice in enumerate(q[1]) %}
+            <label>
+                <input type="radio" name="q{{ loop.index0 }}" value="{{ ['A','B','C','D'][i] }}">
+                {{ choice }}
+            </label><br>
+        {% endfor %}
+
+        <input type="hidden" name="correct_{{ loop.index0 }}" value="{{ q[2] }}">
+        <br><br>
+    {% endfor %}
+
+    <button type="submit">Soumettre</button>
+</form>
+

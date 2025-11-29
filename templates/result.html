@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Reflexio — Résultat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Résultat : {{ score }} / {{ total }}</h1>
+      <p class="subtitle">Voici le corrigé — ta réponse et la bonne réponse (si tu t'es trompé)</p>
+    </header>
+
+    <main>
+      {% for c in corrections %}
+        <div class="card correction">
+          <p class="question-text"><strong>{{ c.question }}</strong></p>
+          <p>Ta réponse : <span class="{{ 'correct' if c.is_correct else 'incorrect' }}">{{ c.user_text }}</span></p>
+          {% if not c.is_correct %}
+            <p>Bonne réponse : <strong>{{ c.correct_text }}</strong></p>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <div class="grid">
+        <a class="card outline" href="{{ url_for('start_quiz', category_key=session.get('category_key')) }}">Refaire (nouveau tirage)</a>
+        <a class="card" href="{{ url_for('index') }}">Retour au menu</a>
+      </div>
+    </main>
+
+    <footer class="footer">Projet scolaire — Reflexio</footer>
+  </div>
+</body>
+</html>
+

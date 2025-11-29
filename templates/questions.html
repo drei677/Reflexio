@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Reflexio — Question</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h2>Question {{ qnum }} / {{ total }}</h2>
+    </header>
+
+    <main>
+      <div class="card">
+        <p class="question-text"><strong>{{ question_text }}</strong></p>
+
+        {% if feedback %}
+          <div class="feedback {{ 'success' if feedback.is_correct else 'error' }}">
+            {% if feedback.is_correct %}
+              ✅ Bonne réponse — {{ feedback.chosen_text }}
+            {% else %}
+              ❌ Mauvaise réponse — Tu as choisi : {{ feedback.chosen_text }}.
+              <div class="correct">Réponse correcte : {{ feedback.correct_text }}</div>
+            {% endif %}
+          </div>
+
+          <!-- Bouton Prochain -->
+          <form method="POST">
+            <input type="hidden" name="action" value="next">
+            <button class="primary" type="submit">Prochain ➡</button>
+          </form>
+
+        {% else %}
+          <!-- Formulaire de réponse -->
+          <form method="POST">
+            <input type="hidden" name="action" value="answer">
+            <div class="choices">
+              {% for choice in choices %}
+                <label class="choice">
+                  <input type="radio" name="choice" value="{{ ['A','B','C','D'][loop.index0] }}" required>
+                  {{ choice }}
+                </label>
+              {% endfor %}
+            </div>
+
+            <button class="primary" type="submit">Valider</button>
+          </form>
+        {% endif %}
+
+      </div>
+
+      <a class="back" href="{{ url_for('index') }}">← Retour au menu</a>
+    </main>
+
+    <footer class="footer">Projet scolaire — Reflexio</footer>
+  </div>
+</body>
+</html>
+

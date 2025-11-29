@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Reflexio — Accueil</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Reflexio(par Andrei)</h1>
+      <p class="subtitle">Choisis une matière pour commencer — 5 questions aléatoires par quiz.</p>
+    </header>
+
+    <main>
+      <section class="menu">
+        <a class="card" href="{{ url_for('categories', subject='math') }}">Mathématiques</a>
+        <a class="card" href="{{ url_for('categories', subject='science') }}">Sciences</a>
+        <a class="card" href="{{ url_for('categories', subject='histoire') }}">Histoire</a>
+      </section>
+    </main>
+
+    <footer class="footer">Projet scolaire — Reflexio</footer>
+  </div>
+</body>
+</html>
+

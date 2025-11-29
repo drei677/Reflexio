@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Reflexio — Sous-catégories</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>{{ subject|capitalize }}</h1>
+      <p class="subtitle">Choisis une sous-catégorie</p>
+    </header>
+
+    <main>
+      <section class="menu">
+        {% for label, key in subs %}
+          <a class="card" href="{{ url_for('start_quiz', category_key=key) }}">{{ label }}</a>
+        {% endfor %}
+      </section>
+
+      <a class="back" href="{{ url_for('index') }}">← Retour</a>
+    </main>
+
+    <footer class="footer">Projet scolaire — Reflexio</footer>
+  </div>
+</body>
+</html>
+
