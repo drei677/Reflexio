@@ -39,7 +39,7 @@ QUESTIONS = {
         ("Factoriser x² + 7x + 12 donne :", ["(x + 4)(x + 3)","(x + 6)(x + 2)","(x + 12)(x - 1)","Impossible"], "A"),
         ("(x - 5)² = ?", ["x² - 25","x² + 25 - 10x","x² - 10x + 25","x² + 10x + 25"], "C"),
         ("7x⁰ vaut :", ["7","1","0","x"], "A"),
-        ("2x - 3 = 11 → x = ?, ["8","2","7","1"], "C"),
+        ("2x - 3 = 11, x=?", ["8","1","7","11"], "C"), 
         ("Le terme constant de 4x² + 3x - 9 est :", ["4","3","-9","Aucun"], "C"),
         ("Une équation du 2e degré peut avoir :", ["une seule solution","toujours deux","0, 1 ou 2 solutions","aucune solution réelle"], "C"),
         ("PEMDAS commence par :", ["Multiplication","Parenthèses","Soustraction","Division"], "B"),
