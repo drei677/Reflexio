@@ -107,7 +107,6 @@ QUESTIONS = {
         ("La photosynthèse produit…", ["CO₂","O₂","N₂","H₂"], "B"),
         ("Quel organite produit l'énergie (ATP) ?", ["Chloroplaste","Réticulum","Mitochondrie","Appareil de Golgi"], "C"),
         ("Les chromosomes sont composés de…", ["lipides","ADN","protéines","acides aminés"], "B"),
-        ("La reproduction sexuée implique…", ["un seul parent","deux parents","aucune cellule reproductrice","un clone"], "B"),
         ("Les allèles dominants s'écrivent :", ["en minuscules","en majuscules","avec des chiffres","en double"], "B"),
         ("La respiration cellulaire nécessite :", ["CO₂ et eau","O₂ et glucose","N₂ et énergie","lipides et chaleur"], "B"),
         ("Un écosystème inclut…", ["seulement les êtres vivants","seulement les non-vivants","vivants + non-vivants","uniquement les plantes"], "C"),
